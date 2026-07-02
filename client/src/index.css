@@ -1,0 +1,227 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* DiSalvo Brand Colors */
+  --brand-red: #cc1f1f;
+  --brand-red-dark: #a81818;
+  --brand-gold: #b45309;
+  --brand-gold-light: #d97706;
+  --brand-navy: #1e2a3a;
+  --brand-navy-light: #2d3f55;
+  --brand-cream: #faf8f5;
+  --brand-light: #f4f1ec;
+}
+
+:root {
+  --radius: 0.25rem;
+  --background: oklch(0.99 0.002 80);
+  --foreground: oklch(0.18 0.015 240);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.015 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.015 240);
+  --primary: oklch(0.48 0.22 25);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.95 0.005 80);
+  --secondary-foreground: oklch(0.25 0.015 240);
+  --muted: oklch(0.93 0.005 80);
+  --muted-foreground: oklch(0.5 0.01 240);
+  --accent: oklch(0.55 0.16 75);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.48 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.88 0.005 240);
+  --input: oklch(0.88 0.005 240);
+  --ring: oklch(0.48 0.22 25);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-color: #faf8f5;
+    color: #1e2a3a;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+
+  /* DiSalvo Brand Utilities — Light Theme */
+  .btn-primary {
+    background-color: #cc1f1f;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.75rem 1.75rem;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    display: inline-block;
+  }
+  .btn-primary:hover {
+    background-color: #a81818;
+  }
+  .btn-primary:active {
+    transform: scale(0.97);
+  }
+
+  .btn-outline {
+    border: 2px solid #cc1f1f;
+    color: #cc1f1f;
+    background-color: transparent;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.75rem 1.75rem;
+    transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+    display: inline-block;
+  }
+  .btn-outline:hover {
+    background-color: #cc1f1f;
+    color: #ffffff;
+  }
+  .btn-outline:active {
+    transform: scale(0.97);
+  }
+
+  .btn-outline-navy {
+    border: 2px solid #1e2a3a;
+    color: #1e2a3a;
+    background-color: transparent;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.75rem 1.75rem;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+    display: inline-block;
+  }
+  .btn-outline-navy:hover {
+    background-color: #1e2a3a;
+    color: #ffffff;
+  }
+  .btn-outline-navy:active {
+    transform: scale(0.97);
+  }
+
+  .section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #b45309;
+  }
+
+  .section-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #1e2a3a;
+    line-height: 1.15;
+  }
+
+  .red-underline {
+    display: inline-block;
+    border-bottom: 3px solid #cc1f1f;
+    padding-bottom: 0.15em;
+  }
+
+  .gold-text {
+    color: #b45309;
+  }
+
+  .red-text {
+    color: #cc1f1f;
+  }
+
+  .light-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e0d8;
+    box-shadow: 0 1px 4px rgba(30,42,58,0.07);
+  }
+
+  .light-card2 {
+    background-color: #f4f1ec;
+    border: 1px solid #e5e0d8;
+  }
+
+  .navy-bg {
+    background-color: #1e2a3a;
+  }
+
+  /* Accordion overrides for light theme */
+  [data-state="open"] .accordion-chevron {
+    transform: rotate(180deg);
+  }
+  .accordion-chevron {
+    transition: transform 0.2s ease;
+  }
+}
