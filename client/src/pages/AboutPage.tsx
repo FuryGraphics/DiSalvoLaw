@@ -9,11 +9,11 @@ import CTABand from "@/components/CTABand";
 import FadeInUp from "@/components/FadeInUp";
 import { SITE } from "@/lib/siteData";
 
-const ATTORNEY_IMG = "/mario-disalvo.png";
+const ATTORNEY_IMG = "/Logos%20and%20images/di%20salvo%20portrait.jpeg";
 
 export default function AboutPage() {
   return (
-    <div style={{ backgroundColor: "#faf8f5", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#000000", minHeight: "100vh" }}>
       <Navbar />
       <PageHero
         h1="Meet Your Attorney — Mario DiSalvo"
@@ -22,7 +22,7 @@ export default function AboutPage() {
       />
 
       {/* Bio Section */}
-      <section className="py-20" style={{ backgroundColor: "#faf8f5" }}>
+      <section className="py-20" style={{ backgroundColor: "#000000" }}>
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Photo */}
@@ -32,21 +32,21 @@ export default function AboutPage() {
                   src={ATTORNEY_IMG}
                   alt="Attorney Mario DiSalvo"
                   className="w-full object-cover object-top shadow-xl"
-                  style={{ border: "1px solid #e5e0d8", aspectRatio: "4/5" }}
+                  style={{ border: "1px solid #2a2723", aspectRatio: "4/5" }}
                 />
-                <div className="absolute bottom-6 left-6 p-5" style={{ backgroundColor: "#cc1f1f" }}>
-                  <div className="text-2xl font-bold text-white" style={{ fontFamily: "'Playfair Display', serif" }}>1,000+</div>
-                  <div className="text-[10px] text-white/80 uppercase tracking-wider mt-1" style={{ fontFamily: "'Inter', sans-serif" }}>CASES DEFENDED</div>
+                <div className="absolute bottom-6 left-6 p-5" style={{ backgroundColor: "#b04a22" }}>
+                  <div className="text-2xl font-bold text-[#b4b8a8]" style={{ fontFamily: "'Playfair Display', serif" }}>1,000+</div>
+                  <div className="text-[10px] text-[#b4b8a8]/80 uppercase tracking-wider mt-1" style={{ fontFamily: "'Inter', sans-serif" }}>CASES DEFENDED</div>
                 </div>
               </div>
             </FadeInUp>
 
             {/* Bio Text */}
             <FadeInUp delay={0.15}>
-              <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#b45309] mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>MEET YOUR ATTORNEY</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#1e2a3a] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>Mario DiSalvo, Attorney At Law</h2>
+              <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#9b8652] mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>MEET YOUR ATTORNEY</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#b4b8a8] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>Mario DiSalvo, Attorney At Law</h2>
 
-              <div className="space-y-5 text-gray-600 text-sm leading-relaxed mb-8" style={{ fontFamily: "'Inter', sans-serif" }}>
+              <div className="space-y-5 text-[#9a9d90] text-sm leading-relaxed mb-8" style={{ fontFamily: "'Inter', sans-serif" }}>
                 <p>
                   Mario DiSalvo founded DiSalvo Law Office with a single mission: to provide the people of Fresno and the Central Valley with the aggressive, personalized criminal defense they deserve. With over 20 years of experience in California's courts, Attorney DiSalvo has built a reputation as a tenacious advocate who never backs down from a fight.
                 </p>
@@ -72,8 +72,8 @@ export default function AboutPage() {
                   "Flexible, affordable payment plans",
                   "Serving Fresno, Clovis, Madera, Visalia, and surrounding areas",
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-[#1e2a3a]" style={{ fontFamily: "'Inter', sans-serif" }}>
-                    <CheckCircle2 className="w-4 h-4 text-[#cc1f1f] mt-0.5 shrink-0" />
+                  <li key={i} className="flex items-start gap-3 text-sm text-[#b4b8a8]" style={{ fontFamily: "'Inter', sans-serif" }}>
+                    <CheckCircle2 className="w-4 h-4 text-[#b04a22] mt-0.5 shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -88,11 +88,11 @@ export default function AboutPage() {
       </section>
 
       {/* Why Hire a Private Attorney */}
-      <section className="py-20" style={{ backgroundColor: "#ffffff" }}>
+      <section className="py-20" style={{ backgroundColor: "#1c1a17" }}>
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <FadeInUp>
-            <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#b45309] mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>WHY PRIVATE COUNSEL</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1e2a3a] mb-10 max-w-2xl leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
+            <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#9b8652] mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>WHY PRIVATE COUNSEL</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#b4b8a8] mb-10 max-w-2xl leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
               Why Hire a Private Criminal Defense Attorney?
             </h2>
           </FadeInUp>
@@ -112,10 +112,10 @@ export default function AboutPage() {
               },
             ].map((item, i) => (
               <FadeInUp key={i} delay={i * 0.1}>
-                <div className="p-7 h-full shadow-sm" style={{ backgroundColor: "#faf8f5", border: "1px solid #e5e0d8" }}>
-                  <div className="w-8 h-1 bg-[#cc1f1f] mb-4" />
-                  <h3 className="text-lg font-bold text-[#1e2a3a] mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>{item.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>{item.body}</p>
+                <div className="p-7 h-full shadow-sm" style={{ backgroundColor: "#000000", border: "1px solid #2a2723" }}>
+                  <div className="w-8 h-1 bg-[#b04a22] mb-4" />
+                  <h3 className="text-lg font-bold text-[#b4b8a8] mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>{item.title}</h3>
+                  <p className="text-[#9a9d90] text-sm leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>{item.body}</p>
                 </div>
               </FadeInUp>
             ))}

@@ -9,7 +9,7 @@ import { SITE } from "@/lib/siteData";
 
 export default function ContactPage() {
   return (
-    <div style={{ backgroundColor: "#faf8f5", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#000000", minHeight: "100vh" }}>
       <Navbar />
       <PageHero
         h1="Contact DiSalvo Law Office"
@@ -18,34 +18,34 @@ export default function ContactPage() {
         showCTA={false}
       />
 
-      <section className="py-20" style={{ backgroundColor: "#faf8f5" }}>
+      <section className="py-20" style={{ backgroundColor: "#000000" }}>
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Left: Info */}
             <FadeInUp>
-              <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#b45309] mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>GET IN TOUCH</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#1e2a3a] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>We're Here When You Need Us Most</h2>
-              <p className="text-gray-600 text-sm leading-relaxed mb-8" style={{ fontFamily: "'Inter', sans-serif" }}>
+              <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#9b8652] mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>GET IN TOUCH</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#b4b8a8] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>We're Here When You Need Us Most</h2>
+              <p className="text-[#9a9d90] text-sm leading-relaxed mb-8" style={{ fontFamily: "'Inter', sans-serif" }}>
                 If you or a loved one has been arrested or is facing criminal charges in Fresno or the Central Valley, do not wait. Contact DiSalvo Law Office immediately for a free, confidential consultation.
               </p>
 
               <div className="space-y-5 mb-10">
                 {[
-                  { icon: <Phone className="w-5 h-5 text-[#cc1f1f]" />, label: "Phone", value: SITE.phone, href: `tel:${SITE.phoneRaw}` },
-                  { icon: <Mail className="w-5 h-5 text-[#cc1f1f]" />, label: "Email", value: SITE.email, href: `mailto:${SITE.email}` },
-                  { icon: <MapPin className="w-5 h-5 text-[#cc1f1f]" />, label: "Address", value: SITE.fullAddress, href: "#map" },
-                  { icon: <Clock className="w-5 h-5 text-[#cc1f1f]" />, label: "Hours", value: "Open 24 Hours — 7 Days a Week", href: undefined },
+                  { icon: <Phone className="w-5 h-5 text-[#b04a22]" />, label: "Phone", value: SITE.phone, href: `tel:${SITE.phoneRaw}` },
+                  { icon: <Mail className="w-5 h-5 text-[#b04a22]" />, label: "Email", value: SITE.email, href: `mailto:${SITE.email}` },
+                  { icon: <MapPin className="w-5 h-5 text-[#b04a22]" />, label: "Address", value: SITE.fullAddress, href: "#map" },
+                  { icon: <Clock className="w-5 h-5 text-[#b04a22]" />, label: "Hours", value: "Open 24 Hours — 7 Days a Week", href: undefined },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-4">
-                    <div className="w-10 h-10 flex items-center justify-center shrink-0 shadow-sm" style={{ backgroundColor: "#ffffff", border: "1px solid #e5e0d8" }}>
+                    <div className="w-10 h-10 flex items-center justify-center shrink-0 shadow-sm" style={{ backgroundColor: "#1c1a17", border: "1px solid #2a2723" }}>
                       {item.icon}
                     </div>
                     <div>
-                      <p className="text-[10px] text-gray-500 uppercase tracking-wider mb-0.5" style={{ fontFamily: "'Inter', sans-serif" }}>{item.label}</p>
+                      <p className="text-[10px] text-[#8a8d80] uppercase tracking-wider mb-0.5" style={{ fontFamily: "'Inter', sans-serif" }}>{item.label}</p>
                       {item.href ? (
-                        <a href={item.href} className="text-[#1e2a3a] text-sm font-medium hover:text-[#cc1f1f] transition-colors" style={{ fontFamily: "'Inter', sans-serif" }}>{item.value}</a>
+                        <a href={item.href} className="text-[#b4b8a8] text-sm font-medium hover:text-[#b04a22] transition-colors" style={{ fontFamily: "'Inter', sans-serif" }}>{item.value}</a>
                       ) : (
-                        <p className="text-[#1e2a3a] text-sm font-medium" style={{ fontFamily: "'Inter', sans-serif" }}>{item.value}</p>
+                        <p className="text-[#b4b8a8] text-sm font-medium" style={{ fontFamily: "'Inter', sans-serif" }}>{item.value}</p>
                       )}
                     </div>
                   </div>
@@ -53,7 +53,7 @@ export default function ContactPage() {
               </div>
 
               {/* Google Maps Embed */}
-              <div id="map" className="overflow-hidden shadow-sm" style={{ border: "1px solid #e5e0d8", height: "280px" }}>
+              <div id="map" className="overflow-hidden shadow-sm" style={{ border: "1px solid #2a2723", height: "280px" }}>
                 <iframe
                   title="DiSalvo Law Office Location"
                   width="100%"
@@ -69,9 +69,9 @@ export default function ContactPage() {
 
             {/* Right: LeadConnector Form */}
             <FadeInUp delay={0.15}>
-              <div className="p-8 shadow-sm" style={{ backgroundColor: "#ffffff", border: "1px solid #e5e0d8" }}>
-                <h3 className="text-xl font-bold text-[#1e2a3a] mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>Send Us a Message</h3>
-                <p className="text-gray-500 text-sm mb-6" style={{ fontFamily: "'Inter', sans-serif" }}>All information is kept strictly confidential.</p>
+              <div className="p-8 shadow-sm" style={{ backgroundColor: "#1c1a17", border: "1px solid #2a2723" }}>
+                <h3 className="text-xl font-bold text-[#b4b8a8] mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>Send Us a Message</h3>
+                <p className="text-[#8a8d80] text-sm mb-6" style={{ fontFamily: "'Inter', sans-serif" }}>All information is kept strictly confidential.</p>
 
                 {/* LeadConnector Embedded Form */}
                 <iframe
@@ -92,7 +92,7 @@ export default function ContactPage() {
                   title="Website Form (DiSalvo Law Office)"
                 />
 
-                <p className="text-gray-500 text-[11px] text-center mt-4" style={{ fontFamily: "'Inter', sans-serif" }}>
+                <p className="text-[#8a8d80] text-[11px] text-center mt-4" style={{ fontFamily: "'Inter', sans-serif" }}>
                   Submitting this form does not create an attorney-client relationship.
                 </p>
               </div>

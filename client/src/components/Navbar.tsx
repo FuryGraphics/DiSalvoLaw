@@ -5,7 +5,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, Phone, Scale } from "lucide-react";
+import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { SITE, PRACTICE_AREAS, ADDITIONAL_PRACTICE_AREAS, CITIES } from "@/lib/siteData";
 
 const allSpecialties = [
@@ -65,8 +65,8 @@ export default function Navbar() {
   }, []);
 
   const navBg = scrolled
-    ? "bg-white/97 backdrop-blur-md border-b border-gray-200 shadow-sm"
-    : "bg-white border-b border-gray-200";
+    ? "bg-[#1c1a17]/97 backdrop-blur-md border-b border-[#2a2723] shadow-sm"
+    : "bg-[#1c1a17] border-b border-[#2a2723]";
 
   const dropdownVariants = {
     hidden: { opacity: 0, y: -8, scale: 0.97 },
@@ -84,20 +84,22 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 lg:h-[70px]">
             {/* Brand */}
             <Link href="/pg/home" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 flex items-center justify-center">
-                <Scale className="w-6 h-6 text-[#cc1f1f]" />
-              </div>
+              <img
+                src="/Logos%20and%20images/logo%20without%20text.png"
+                alt="DiSalvo Law crest"
+                className="w-9 h-9 object-contain"
+              />
               <div className="leading-tight">
-                <span className="font-bold text-[#1e2a3a] text-base tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
-                  DiSalvo <span className="text-[#cc1f1f]">Law</span>
+                <span className="font-bold text-[#b4b8a8] text-base tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
+                  DiSalvo <span className="text-[#b04a22]">Law</span>
                 </span>
-                <div className="text-[10px] text-gray-500 tracking-widest uppercase leading-none">Office</div>
+                <div className="text-[10px] text-[#8a8d80] tracking-widest uppercase leading-none">Office</div>
               </div>
             </Link>
 
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
-              <Link href="/pg/home" className="text-[11px] font-semibold tracking-widest uppercase text-gray-600 hover:text-[#cc1f1f] px-3 py-2 transition-colors">
+              <Link href="/pg/home" className="text-[11px] font-semibold tracking-widest uppercase text-[#9a9d90] hover:text-[#b04a22] px-3 py-2 transition-colors">
                 HOME
               </Link>
 
@@ -105,7 +107,7 @@ export default function Navbar() {
               <div ref={specialtiesRef} className="relative">
                 <button
                   onClick={() => { setSpecialtiesOpen(!specialtiesOpen); setAreasOpen(false); setLegalOpen(false); }}
-                  className="flex items-center gap-1 text-[11px] font-semibold tracking-widest uppercase text-gray-600 hover:text-[#cc1f1f] px-3 py-2 transition-colors"
+                  className="flex items-center gap-1 text-[11px] font-semibold tracking-widest uppercase text-[#9a9d90] hover:text-[#b04a22] px-3 py-2 transition-colors"
                 >
                   LAW SPECIALTIES
                   <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${specialtiesOpen ? "rotate-180" : ""}`} />
@@ -117,14 +119,14 @@ export default function Navbar() {
                       initial="hidden"
                       animate="visible"
                       exit="exit"
-                      className="absolute top-full left-0 mt-1 w-56 bg-white border border-gray-200 shadow-xl py-2 z-50"
+                      className="absolute top-full left-0 mt-1 w-56 bg-[#1c1a17] border border-[#2a2723] shadow-xl py-2 z-50"
                     >
                       {allSpecialties.map((item) => (
                         <Link
                           key={item.href}
                           href={item.href}
                           onClick={() => setSpecialtiesOpen(false)}
-                          className="block px-4 py-2.5 text-sm text-gray-700 hover:text-[#cc1f1f] hover:bg-gray-50 transition-colors"
+                          className="block px-4 py-2.5 text-sm text-[#b4b8a8] hover:text-[#b04a22] hover:bg-[#14120f] transition-colors"
                         >
                           {item.title}
                         </Link>
@@ -138,7 +140,7 @@ export default function Navbar() {
               <div ref={areasRef} className="relative">
                 <button
                   onClick={() => { setAreasOpen(!areasOpen); setSpecialtiesOpen(false); setLegalOpen(false); }}
-                  className="flex items-center gap-1 text-[11px] font-semibold tracking-widest uppercase text-gray-600 hover:text-[#cc1f1f] px-3 py-2 transition-colors"
+                  className="flex items-center gap-1 text-[11px] font-semibold tracking-widest uppercase text-[#9a9d90] hover:text-[#b04a22] px-3 py-2 transition-colors"
                 >
                   AREAS SERVED
                   <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${areasOpen ? "rotate-180" : ""}`} />
@@ -150,14 +152,14 @@ export default function Navbar() {
                       initial="hidden"
                       animate="visible"
                       exit="exit"
-                      className="absolute top-full left-0 mt-1 w-52 bg-white border border-gray-200 shadow-xl py-2 z-50"
+                      className="absolute top-full left-0 mt-1 w-52 bg-[#1c1a17] border border-[#2a2723] shadow-xl py-2 z-50"
                     >
                       {areasServed.map((item) => (
                         <Link
                           key={item.href}
                           href={item.href}
                           onClick={() => setAreasOpen(false)}
-                          className="block px-4 py-2.5 text-sm text-gray-700 hover:text-[#cc1f1f] hover:bg-gray-50 transition-colors"
+                          className="block px-4 py-2.5 text-sm text-[#b4b8a8] hover:text-[#b04a22] hover:bg-[#14120f] transition-colors"
                         >
                           {item.title}
                         </Link>
@@ -167,13 +169,13 @@ export default function Navbar() {
                 </AnimatePresence>
               </div>
 
-              <Link href="/pg/about" className="text-[11px] font-semibold tracking-widest uppercase text-gray-600 hover:text-[#cc1f1f] px-3 py-2 transition-colors">
+              <Link href="/pg/about" className="text-[11px] font-semibold tracking-widest uppercase text-[#9a9d90] hover:text-[#b04a22] px-3 py-2 transition-colors">
                 ABOUT
               </Link>
-              <Link href="/pg/home#reviews" className="text-[11px] font-semibold tracking-widest uppercase text-gray-600 hover:text-[#cc1f1f] px-3 py-2 transition-colors">
+              <Link href="/pg/home#reviews" className="text-[11px] font-semibold tracking-widest uppercase text-[#9a9d90] hover:text-[#b04a22] px-3 py-2 transition-colors">
                 REVIEWS
               </Link>
-              <Link href="/pg/contact" className="text-[11px] font-semibold tracking-widest uppercase text-gray-600 hover:text-[#cc1f1f] px-3 py-2 transition-colors">
+              <Link href="/pg/contact" className="text-[11px] font-semibold tracking-widest uppercase text-[#9a9d90] hover:text-[#b04a22] px-3 py-2 transition-colors">
                 CONTACT
               </Link>
 
@@ -181,7 +183,7 @@ export default function Navbar() {
               <div ref={legalRef} className="relative">
                 <button
                   onClick={() => { setLegalOpen(!legalOpen); setSpecialtiesOpen(false); setAreasOpen(false); }}
-                  className="flex items-center gap-1 text-[11px] font-semibold tracking-widest uppercase text-gray-600 hover:text-[#cc1f1f] px-3 py-2 transition-colors"
+                  className="flex items-center gap-1 text-[11px] font-semibold tracking-widest uppercase text-[#9a9d90] hover:text-[#b04a22] px-3 py-2 transition-colors"
                 >
                   LEGAL
                   <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${legalOpen ? "rotate-180" : ""}`} />
@@ -193,10 +195,10 @@ export default function Navbar() {
                       initial="hidden"
                       animate="visible"
                       exit="exit"
-                      className="absolute top-full right-0 mt-1 w-48 bg-white border border-gray-200 shadow-xl py-2 z-50"
+                      className="absolute top-full right-0 mt-1 w-48 bg-[#1c1a17] border border-[#2a2723] shadow-xl py-2 z-50"
                     >
-                      <Link href="/pg/privacy-policy" onClick={() => setLegalOpen(false)} className="block px-4 py-2.5 text-sm text-gray-700 hover:text-[#cc1f1f] hover:bg-gray-50 transition-colors">Privacy Policy</Link>
-                      <Link href="/pg/terms-and-conditions" onClick={() => setLegalOpen(false)} className="block px-4 py-2.5 text-sm text-gray-700 hover:text-[#cc1f1f] hover:bg-gray-50 transition-colors">Terms & Conditions</Link>
+                      <Link href="/pg/privacy-policy" onClick={() => setLegalOpen(false)} className="block px-4 py-2.5 text-sm text-[#b4b8a8] hover:text-[#b04a22] hover:bg-[#14120f] transition-colors">Privacy Policy</Link>
+                      <Link href="/pg/terms-and-conditions" onClick={() => setLegalOpen(false)} className="block px-4 py-2.5 text-sm text-[#b4b8a8] hover:text-[#b04a22] hover:bg-[#14120f] transition-colors">Terms & Conditions</Link>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -207,7 +209,7 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-3">
               <a
                 href={`tel:${SITE.phoneRaw}`}
-                className="text-sm font-semibold text-[#1e2a3a] hover:text-[#cc1f1f] transition-colors tracking-wide"
+                className="text-sm font-semibold text-[#b4b8a8] hover:text-[#b04a22] transition-colors tracking-wide"
               >
                 {SITE.phone}
               </a>
@@ -222,7 +224,7 @@ export default function Navbar() {
             {/* Mobile Hamburger */}
             <button
               onClick={() => setMobileOpen(true)}
-              className="lg:hidden p-2 text-[#1e2a3a]"
+              className="lg:hidden p-2 text-[#b4b8a8]"
               aria-label="Open menu"
             >
               <Menu className="w-6 h-6" />
@@ -248,25 +250,26 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.3 }}
-              className="fixed top-0 right-0 bottom-0 w-[85vw] max-w-sm bg-white z-[70] overflow-y-auto shadow-2xl"
+              className="fixed top-0 right-0 bottom-0 w-[85vw] max-w-sm bg-[#1c1a17] z-[70] overflow-y-auto shadow-2xl"
             >
-              <div className="flex items-center justify-between p-5 border-b border-gray-200">
-                <span className="font-bold text-[#1e2a3a] text-lg" style={{ fontFamily: "'Playfair Display', serif" }}>
-                  DiSalvo <span className="text-[#cc1f1f]">Law</span>
+              <div className="flex items-center justify-between p-5 border-b border-[#2a2723]">
+                <span className="flex items-center gap-2 font-bold text-[#b4b8a8] text-lg" style={{ fontFamily: "'Playfair Display', serif" }}>
+                  <img src="/Logos%20and%20images/logo%20without%20text.png" alt="DiSalvo Law crest" className="w-8 h-8 object-contain" />
+                  DiSalvo <span className="text-[#b04a22]">Law</span>
                 </span>
-                <button onClick={() => setMobileOpen(false)} className="text-gray-500 hover:text-[#1e2a3a] p-1">
+                <button onClick={() => setMobileOpen(false)} className="text-[#8a8d80] hover:text-[#b4b8a8] p-1">
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
               <nav className="p-5 space-y-1">
-                <Link href="/pg/home" className="block py-3 text-sm font-semibold tracking-widest uppercase text-gray-700 hover:text-[#cc1f1f] border-b border-gray-100">HOME</Link>
+                <Link href="/pg/home" className="block py-3 text-sm font-semibold tracking-widest uppercase text-[#b4b8a8] hover:text-[#b04a22] border-b border-[#2a2723]">HOME</Link>
 
                 {/* Mobile Specialties */}
                 <div>
                   <button
                     onClick={() => setMobileSpecialties(!mobileSpecialties)}
-                    className="flex items-center justify-between w-full py-3 text-sm font-semibold tracking-widest uppercase text-gray-700 hover:text-[#cc1f1f] border-b border-gray-100"
+                    className="flex items-center justify-between w-full py-3 text-sm font-semibold tracking-widest uppercase text-[#b4b8a8] hover:text-[#b04a22] border-b border-[#2a2723]"
                   >
                     LAW SPECIALTIES
                     <ChevronDown className={`w-4 h-4 transition-transform ${mobileSpecialties ? "rotate-180" : ""}`} />
@@ -282,7 +285,7 @@ export default function Navbar() {
                       >
                         <div className="pl-4 py-2 space-y-1">
                           {allSpecialties.map((item) => (
-                            <Link key={item.href} href={item.href} className="block py-2 text-sm text-gray-600 hover:text-[#cc1f1f] transition-colors">
+                            <Link key={item.href} href={item.href} className="block py-2 text-sm text-[#9a9d90] hover:text-[#b04a22] transition-colors">
                               {item.title}
                             </Link>
                           ))}
@@ -296,7 +299,7 @@ export default function Navbar() {
                 <div>
                   <button
                     onClick={() => setMobileAreas(!mobileAreas)}
-                    className="flex items-center justify-between w-full py-3 text-sm font-semibold tracking-widest uppercase text-gray-700 hover:text-[#cc1f1f] border-b border-gray-100"
+                    className="flex items-center justify-between w-full py-3 text-sm font-semibold tracking-widest uppercase text-[#b4b8a8] hover:text-[#b04a22] border-b border-[#2a2723]"
                   >
                     AREAS SERVED
                     <ChevronDown className={`w-4 h-4 transition-transform ${mobileAreas ? "rotate-180" : ""}`} />
@@ -312,7 +315,7 @@ export default function Navbar() {
                       >
                         <div className="pl-4 py-2 space-y-1">
                           {areasServed.map((item) => (
-                            <Link key={item.href} href={item.href} className="block py-2 text-sm text-gray-600 hover:text-[#cc1f1f] transition-colors">
+                            <Link key={item.href} href={item.href} className="block py-2 text-sm text-[#9a9d90] hover:text-[#b04a22] transition-colors">
                               {item.title}
                             </Link>
                           ))}
@@ -322,16 +325,16 @@ export default function Navbar() {
                   </AnimatePresence>
                 </div>
 
-                <Link href="/pg/about" className="block py-3 text-sm font-semibold tracking-widest uppercase text-gray-700 hover:text-[#cc1f1f] border-b border-gray-100">ABOUT</Link>
-                <Link href="/pg/home#reviews" className="block py-3 text-sm font-semibold tracking-widest uppercase text-gray-700 hover:text-[#cc1f1f] border-b border-gray-100">REVIEWS</Link>
-                <Link href="/pg/contact" className="block py-3 text-sm font-semibold tracking-widest uppercase text-gray-700 hover:text-[#cc1f1f] border-b border-gray-100">CONTACT</Link>
-                <Link href="/pg/privacy-policy" className="block py-3 text-sm font-semibold tracking-widest uppercase text-gray-700 hover:text-[#cc1f1f] border-b border-gray-100">PRIVACY POLICY</Link>
-                <Link href="/pg/terms-and-conditions" className="block py-3 text-sm font-semibold tracking-widest uppercase text-gray-700 hover:text-[#cc1f1f] border-b border-gray-100">TERMS</Link>
+                <Link href="/pg/about" className="block py-3 text-sm font-semibold tracking-widest uppercase text-[#b4b8a8] hover:text-[#b04a22] border-b border-[#2a2723]">ABOUT</Link>
+                <Link href="/pg/home#reviews" className="block py-3 text-sm font-semibold tracking-widest uppercase text-[#b4b8a8] hover:text-[#b04a22] border-b border-[#2a2723]">REVIEWS</Link>
+                <Link href="/pg/contact" className="block py-3 text-sm font-semibold tracking-widest uppercase text-[#b4b8a8] hover:text-[#b04a22] border-b border-[#2a2723]">CONTACT</Link>
+                <Link href="/pg/privacy-policy" className="block py-3 text-sm font-semibold tracking-widest uppercase text-[#b4b8a8] hover:text-[#b04a22] border-b border-[#2a2723]">PRIVACY POLICY</Link>
+                <Link href="/pg/terms-and-conditions" className="block py-3 text-sm font-semibold tracking-widest uppercase text-[#b4b8a8] hover:text-[#b04a22] border-b border-[#2a2723]">TERMS</Link>
               </nav>
 
-              <div className="p-5 space-y-3 border-t border-gray-100">
-                <a href={`tel:${SITE.phoneRaw}`} className="flex items-center gap-2 text-sm font-semibold text-[#1e2a3a]">
-                  <Phone className="w-4 h-4 text-[#cc1f1f]" />
+              <div className="p-5 space-y-3 border-t border-[#2a2723]">
+                <a href={`tel:${SITE.phoneRaw}`} className="flex items-center gap-2 text-sm font-semibold text-[#b4b8a8]">
+                  <Phone className="w-4 h-4 text-[#b04a22]" />
                   {SITE.phone}
                 </a>
                 <Link href="/pg/contact" className="btn-primary block text-center text-xs py-3">
@@ -346,7 +349,7 @@ export default function Navbar() {
       {/* Floating mobile call button */}
       <a
         href={`tel:${SITE.phoneRaw}`}
-        className="fixed bottom-5 right-5 z-40 lg:hidden flex items-center gap-2 bg-[#cc1f1f] text-white text-xs font-bold tracking-wider uppercase px-4 py-3 shadow-lg"
+        className="fixed bottom-5 right-5 z-40 lg:hidden flex items-center gap-2 bg-[#b04a22] text-[#b4b8a8] text-xs font-bold tracking-wider uppercase px-4 py-3 shadow-lg"
         style={{ borderRadius: "2px" }}
       >
         <Phone className="w-4 h-4" />

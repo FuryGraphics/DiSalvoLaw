@@ -16,12 +16,12 @@ interface CityPageProps {
 
 export default function CityPage({ slug }: CityPageProps) {
   const cityData = CITIES.find((c) => c.slug === slug);
-  if (!cityData) return <div className="text-[#1e2a3a] p-20 text-center">City not found</div>;
+  if (!cityData) return <div className="text-[#b4b8a8] p-20 text-center">City not found</div>;
 
   const { city, county, courthouse, courthouseAddress } = cityData;
 
   return (
-    <div style={{ backgroundColor: "#faf8f5", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#000000", minHeight: "100vh" }}>
       <Navbar />
       <PageHero
         h1={`Criminal Defense Attorney ${city}, CA`}
@@ -34,16 +34,16 @@ export default function CityPage({ slug }: CityPageProps) {
       />
 
       {/* Intro */}
-      <section className="py-16" style={{ backgroundColor: "#faf8f5" }}>
+      <section className="py-16" style={{ backgroundColor: "#000000" }}>
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
               <FadeInUp>
-                <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#b45309] mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>SERVING {city.toUpperCase()}, CA</p>
-                <h2 className="text-2xl md:text-3xl font-bold text-[#1e2a3a] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
+                <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#9b8652] mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>SERVING {city.toUpperCase()}, CA</p>
+                <h2 className="text-2xl md:text-3xl font-bold text-[#b4b8a8] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
                   Aggressive Criminal Defense in {city}, California
                 </h2>
-                <div className="space-y-4 text-gray-600 text-sm leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
+                <div className="space-y-4 text-[#9a9d90] text-sm leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
                   <p>
                     If you or a loved one has been arrested or is facing criminal charges in {city}, California, you need an experienced criminal defense attorney on your side immediately. Attorney Mario DiSalvo of DiSalvo Law Office has been defending the rights of people throughout {county} and the Central Valley for over 20 years.
                   </p>
@@ -63,22 +63,22 @@ export default function CityPage({ slug }: CityPageProps) {
             {/* Sidebar: Office Info */}
             <div>
               <FadeInUp delay={0.15}>
-                <div className="p-6 mb-5 shadow-sm" style={{ backgroundColor: "#ffffff", border: "1px solid #e5e0d8" }}>
-                  <h3 className="text-[#1e2a3a] font-bold text-base mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>DiSalvo Law Office</h3>
+                <div className="p-6 mb-5 shadow-sm" style={{ backgroundColor: "#1c1a17", border: "1px solid #2a2723" }}>
+                  <h3 className="text-[#b4b8a8] font-bold text-base mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>DiSalvo Law Office</h3>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
-                      <MapPin className="w-4 h-4 text-[#cc1f1f] mt-0.5 shrink-0" />
+                      <MapPin className="w-4 h-4 text-[#b04a22] mt-0.5 shrink-0" />
                       <div>
-                        <p className="text-gray-700 text-sm" style={{ fontFamily: "'Inter', sans-serif" }}>{SITE.fullAddress}</p>
+                        <p className="text-[#b4b8a8] text-sm" style={{ fontFamily: "'Inter', sans-serif" }}>{SITE.fullAddress}</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Phone className="w-4 h-4 text-[#cc1f1f] shrink-0" />
-                      <a href={`tel:${SITE.phoneRaw}`} className="text-gray-700 text-sm hover:text-[#cc1f1f] transition-colors" style={{ fontFamily: "'Inter', sans-serif" }}>{SITE.phone}</a>
+                      <Phone className="w-4 h-4 text-[#b04a22] shrink-0" />
+                      <a href={`tel:${SITE.phoneRaw}`} className="text-[#b4b8a8] text-sm hover:text-[#b04a22] transition-colors" style={{ fontFamily: "'Inter', sans-serif" }}>{SITE.phone}</a>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Clock className="w-4 h-4 text-[#cc1f1f] shrink-0" />
-                      <p className="text-[#b45309] text-sm font-semibold" style={{ fontFamily: "'Inter', sans-serif" }}>Open 24 Hours — 7 Days</p>
+                      <Clock className="w-4 h-4 text-[#b04a22] shrink-0" />
+                      <p className="text-[#9b8652] text-sm font-semibold" style={{ fontFamily: "'Inter', sans-serif" }}>Open 24 Hours — 7 Days</p>
                     </div>
                   </div>
                   <div className="mt-5 space-y-2">
@@ -88,10 +88,10 @@ export default function CityPage({ slug }: CityPageProps) {
                 </div>
 
                 {/* Courthouse Info */}
-                <div className="p-5 shadow-sm" style={{ backgroundColor: "#ffffff", border: "1px solid #e5e0d8" }}>
-                  <p className="text-[10px] text-[#b45309] uppercase tracking-widest font-semibold mb-2" style={{ fontFamily: "'Inter', sans-serif" }}>LOCAL COURTHOUSE</p>
-                  <p className="text-[#1e2a3a] text-sm font-semibold mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>{courthouse}</p>
-                  <p className="text-gray-500 text-xs" style={{ fontFamily: "'Inter', sans-serif" }}>{courthouseAddress}</p>
+                <div className="p-5 shadow-sm" style={{ backgroundColor: "#1c1a17", border: "1px solid #2a2723" }}>
+                  <p className="text-[10px] text-[#9b8652] uppercase tracking-widest font-semibold mb-2" style={{ fontFamily: "'Inter', sans-serif" }}>LOCAL COURTHOUSE</p>
+                  <p className="text-[#b4b8a8] text-sm font-semibold mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>{courthouse}</p>
+                  <p className="text-[#8a8d80] text-xs" style={{ fontFamily: "'Inter', sans-serif" }}>{courthouseAddress}</p>
                 </div>
               </FadeInUp>
             </div>
@@ -100,22 +100,22 @@ export default function CityPage({ slug }: CityPageProps) {
       </section>
 
       {/* Practice Areas in City */}
-      <section className="py-16" style={{ backgroundColor: "#ffffff" }}>
+      <section className="py-16" style={{ backgroundColor: "#1c1a17" }}>
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <FadeInUp>
-            <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#b45309] mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>PRACTICE AREAS</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1e2a3a] mb-10 max-w-2xl leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
+            <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#9b8652] mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>PRACTICE AREAS</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#b4b8a8] mb-10 max-w-2xl leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
               Practice Areas We Serve in {city}
             </h2>
           </FadeInUp>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {PRACTICE_AREAS.map((area, i) => (
               <FadeInUp key={area.slug} delay={i * 0.07}>
-                <Link href={`/pg/${area.slug}`} className="group block p-6 h-full shadow-sm hover:shadow-md transition-shadow" style={{ backgroundColor: "#faf8f5", border: "1px solid #e5e0d8" }}>
-                  <div className="text-3xl font-bold text-[#cc1f1f] mb-3 leading-none" style={{ fontFamily: "'Playfair Display', serif", opacity: 0.2 }}>{area.num}</div>
-                  <h3 className="text-[#1e2a3a] font-bold text-base mb-2 group-hover:text-[#cc1f1f] transition-colors" style={{ fontFamily: "'Playfair Display', serif" }}>{area.title}</h3>
-                  <p className="text-gray-600 text-xs leading-relaxed mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>{area.blurb}</p>
-                  <span className="inline-flex items-center gap-1 text-[#cc1f1f] text-xs font-semibold uppercase tracking-wider" style={{ fontFamily: "'Inter', sans-serif" }}>
+                <Link href={`/pg/${area.slug}`} className="group block p-6 h-full shadow-sm hover:shadow-md transition-shadow" style={{ backgroundColor: "#000000", border: "1px solid #2a2723" }}>
+                  <div className="text-3xl font-bold text-[#b04a22] mb-3 leading-none" style={{ fontFamily: "'Playfair Display', serif", opacity: 0.2 }}>{area.num}</div>
+                  <h3 className="text-[#b4b8a8] font-bold text-base mb-2 group-hover:text-[#b04a22] transition-colors" style={{ fontFamily: "'Playfair Display', serif" }}>{area.title}</h3>
+                  <p className="text-[#9a9d90] text-xs leading-relaxed mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>{area.blurb}</p>
+                  <span className="inline-flex items-center gap-1 text-[#b04a22] text-xs font-semibold uppercase tracking-wider" style={{ fontFamily: "'Inter', sans-serif" }}>
                     LEARN MORE <ChevronRight className="w-3 h-3" />
                   </span>
                 </Link>
@@ -126,14 +126,14 @@ export default function CityPage({ slug }: CityPageProps) {
       </section>
 
       {/* Google Maps Embed */}
-      <section className="py-16" style={{ backgroundColor: "#f4f1ec" }}>
+      <section className="py-16" style={{ backgroundColor: "#1c1a17" }}>
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <FadeInUp>
-            <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#b45309] mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>OUR OFFICE</p>
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1e2a3a] mb-8 leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>Conveniently Located in Fresno</h2>
+            <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#9b8652] mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>OUR OFFICE</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#b4b8a8] mb-8 leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>Conveniently Located in Fresno</h2>
           </FadeInUp>
           <FadeInUp delay={0.1}>
-            <div className="overflow-hidden shadow-sm" style={{ border: "1px solid #e5e0d8", height: "350px" }}>
+            <div className="overflow-hidden shadow-sm" style={{ border: "1px solid #2a2723", height: "350px" }}>
               <iframe
                 title="DiSalvo Law Office Location"
                 width="100%"
@@ -150,19 +150,19 @@ export default function CityPage({ slug }: CityPageProps) {
       </section>
 
       {/* Internal Links to Other Cities */}
-      <section className="py-12" style={{ backgroundColor: "#ffffff" }}>
+      <section className="py-12" style={{ backgroundColor: "#1c1a17" }}>
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <FadeInUp>
-            <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#b45309] mb-4" style={{ fontFamily: "'Inter', sans-serif" }}>OTHER CITIES WE SERVE</p>
+            <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#9b8652] mb-4" style={{ fontFamily: "'Inter', sans-serif" }}>OTHER CITIES WE SERVE</p>
             <div className="flex flex-wrap gap-3">
               {CITIES.filter((c) => c.slug !== slug).map((c) => (
                 <Link
                   key={c.slug}
                   href={`/pg/${c.slug}`}
-                  className="inline-flex items-center gap-1.5 text-sm text-gray-600 hover:text-[#cc1f1f] transition-colors"
+                  className="inline-flex items-center gap-1.5 text-sm text-[#9a9d90] hover:text-[#b04a22] transition-colors"
                   style={{ fontFamily: "'Inter', sans-serif" }}
                 >
-                  <ChevronRight className="w-3 h-3 text-[#cc1f1f]" />
+                  <ChevronRight className="w-3 h-3 text-[#b04a22]" />
                   {c.city}
                 </Link>
               ))}

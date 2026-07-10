@@ -28,38 +28,39 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* DiSalvo Brand Colors */
-  --brand-red: #cc1f1f;
-  --brand-red-dark: #a81818;
-  --brand-gold: #b45309;
-  --brand-gold-light: #d97706;
-  --brand-navy: #1e2a3a;
-  --brand-navy-light: #2d3f55;
-  --brand-cream: #faf8f5;
-  --brand-light: #f4f1ec;
+  /* DiSalvo Brand Colors — Forged Metal Palette */
+  --brand-red: #b04a22;        /* Forged Copper — primary CTA */
+  --brand-red-dark: #8f3a19;   /* Copper hover */
+  --brand-gold: #9b8652;       /* Antique Brass — accents/borders */
+  --brand-gold-light: #b89c63; /* Lighter brass */
+  --brand-navy: #1c1a17;       /* Dark Patina — surfaces */
+  --brand-navy-light: #14120f; /* Deeper patina */
+  --brand-cream: #000000;      /* True Black — page background */
+  --brand-light: #1c1a17;      /* Dark Patina — light surfaces */
+  --brand-steel: #b4b8a8;      /* Burnished Steel — text */
 }
 
 :root {
   --radius: 0.25rem;
-  --background: oklch(0.99 0.002 80);
-  --foreground: oklch(0.18 0.015 240);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.015 240);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.015 240);
-  --primary: oklch(0.48 0.22 25);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.95 0.005 80);
-  --secondary-foreground: oklch(0.25 0.015 240);
-  --muted: oklch(0.93 0.005 80);
-  --muted-foreground: oklch(0.5 0.01 240);
-  --accent: oklch(0.55 0.16 75);
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.48 0.22 25);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.88 0.005 240);
-  --input: oklch(0.88 0.005 240);
-  --ring: oklch(0.48 0.22 25);
+  --background: #000000;              /* True Black */
+  --foreground: #b4b8a8;             /* Burnished Steel */
+  --card: #1c1a17;                   /* Dark Patina */
+  --card-foreground: #b4b8a8;
+  --popover: #1c1a17;
+  --popover-foreground: #b4b8a8;
+  --primary: #b04a22;               /* Forged Copper */
+  --primary-foreground: #f2eee4;
+  --secondary: #1c1a17;
+  --secondary-foreground: #b4b8a8;
+  --muted: #14120f;
+  --muted-foreground: #8a8d80;
+  --accent: #9b8652;                /* Antique Brass */
+  --accent-foreground: #000000;
+  --destructive: #b04a22;
+  --destructive-foreground: #f2eee4;
+  --border: #2a2723;
+  --input: #2a2723;
+  --ring: #b04a22;
 }
 
 @layer base {
@@ -68,8 +69,8 @@
   }
   body {
     @apply bg-background text-foreground;
-    background-color: #faf8f5;
-    color: #1e2a3a;
+    background-color: #000000;
+    color: #b4b8a8;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -113,10 +114,10 @@
     }
   }
 
-  /* DiSalvo Brand Utilities — Light Theme */
+  /* DiSalvo Brand Utilities — Forged Metal Dark Theme */
   .btn-primary {
-    background-color: #cc1f1f;
-    color: #ffffff;
+    background-color: #b04a22;
+    color: #f2eee4;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     letter-spacing: 0.05em;
@@ -126,15 +127,15 @@
     display: inline-block;
   }
   .btn-primary:hover {
-    background-color: #a81818;
+    background-color: #8f3a19;
   }
   .btn-primary:active {
     transform: scale(0.97);
   }
 
   .btn-outline {
-    border: 2px solid #cc1f1f;
-    color: #cc1f1f;
+    border: 2px solid #b04a22;
+    color: #b04a22;
     background-color: transparent;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
@@ -145,16 +146,16 @@
     display: inline-block;
   }
   .btn-outline:hover {
-    background-color: #cc1f1f;
-    color: #ffffff;
+    background-color: #b04a22;
+    color: #f2eee4;
   }
   .btn-outline:active {
     transform: scale(0.97);
   }
 
   .btn-outline-navy {
-    border: 2px solid #1e2a3a;
-    color: #1e2a3a;
+    border: 2px solid #b4b8a8;
+    color: #b4b8a8;
     background-color: transparent;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
@@ -165,8 +166,8 @@
     display: inline-block;
   }
   .btn-outline-navy:hover {
-    background-color: #1e2a3a;
-    color: #ffffff;
+    background-color: #b4b8a8;
+    color: #000000;
   }
   .btn-outline-navy:active {
     transform: scale(0.97);
@@ -178,43 +179,43 @@
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #b45309;
+    color: #9b8652;
   }
 
   .section-heading {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
-    color: #1e2a3a;
+    color: #b4b8a8;
     line-height: 1.15;
   }
 
   .red-underline {
     display: inline-block;
-    border-bottom: 3px solid #cc1f1f;
+    border-bottom: 3px solid #b04a22;
     padding-bottom: 0.15em;
   }
 
   .gold-text {
-    color: #b45309;
+    color: #9b8652;
   }
 
   .red-text {
-    color: #cc1f1f;
+    color: #b04a22;
   }
 
   .light-card {
-    background-color: #ffffff;
-    border: 1px solid #e5e0d8;
-    box-shadow: 0 1px 4px rgba(30,42,58,0.07);
+    background-color: #1c1a17;
+    border: 1px solid #2a2723;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.5);
   }
 
   .light-card2 {
-    background-color: #f4f1ec;
-    border: 1px solid #e5e0d8;
+    background-color: #14120f;
+    border: 1px solid #2a2723;
   }
 
   .navy-bg {
-    background-color: #1e2a3a;
+    background-color: #1c1a17;
   }
 
   /* Accordion overrides for light theme */
