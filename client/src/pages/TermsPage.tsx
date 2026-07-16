@@ -22,7 +22,7 @@ export default function TermsPage() {
               <p className="text-[#8a8d80] text-sm mb-8">Last updated: January 1, 2025</p>
 
               <h2 className="text-[#b4b8a8] text-xl font-bold mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>1. Acceptance of Terms</h2>
-              <p className="mb-6 text-sm">By accessing and using the DiSalvo Law Office website (DiSalvoLaw.com), you accept and agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our website.</p>
+              <p className="mb-6 text-sm">By accessing and using the DiSalvo Law Office website (www.disalvo-law.com), you accept and agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our website.</p>
 
               <h2 className="text-[#b4b8a8] text-xl font-bold mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>2. No Attorney-Client Relationship</h2>
               <p className="mb-6 text-sm">The information provided on this website is for general informational purposes only and does not constitute legal advice. Viewing this website, contacting us through the website, or submitting a contact form does not create an attorney-client relationship. An attorney-client relationship is only formed when you have signed a written retainer agreement with DiSalvo Law Office.</p>

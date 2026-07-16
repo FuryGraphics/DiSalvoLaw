@@ -20,7 +20,7 @@ const LOCAL_BUSINESS_SCHEMA = {
   "@type": ["LegalService", "LocalBusiness"],
   "name": "DiSalvo Law Office",
   "description": BASE_DESC,
-  "url": "https://DiSalvoLaw.com",
+  "url": "https://www.disalvo-law.com",
   "telephone": SITE.phone,
   "email": SITE.email,
   "address": {

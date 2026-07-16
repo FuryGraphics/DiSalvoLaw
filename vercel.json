@@ -1,7 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "vite",
-  "buildCommand": "pnpm vite build",
+  "buildCommand": "pnpm vite build && pnpm exec puppeteer browsers install chrome && node scripts/prerender.mjs",
   "outputDirectory": "dist/public",
+  "cleanUrls": true,
+  "redirects": [{ "source": "/", "destination": "/pg/home", "permanent": true }],
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }

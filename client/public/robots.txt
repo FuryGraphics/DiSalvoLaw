@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://DiSalvoLaw.com/sitemap.xml
+Sitemap: https://www.disalvo-law.com/sitemap.xml
