@@ -203,10 +203,14 @@ function vitePluginStorageProxy(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
+// Manus editor/runtime tooling is only needed by the Manus visual editor
+// during local dev. Excluding it from the production build strips a ~360 KB
+// inline runtime (plus JSX source-location attributes) from every page —
+// fixing the low text-HTML ratio and shrinking HTML size.
+const devOnlyPlugins = [jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
 
-export default defineConfig({
-  plugins,
+export default defineConfig(({ command }) => ({
+  plugins: [react(), tailwindcss(), ...(command === "serve" ? devOnlyPlugins : [])],
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
@@ -238,4 +242,4 @@ export default defineConfig({
       deny: ["**/.*"],
     },
   },
-});
+}));
