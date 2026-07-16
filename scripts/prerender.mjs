@@ -12,7 +12,7 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { join, dirname, extname } from "node:path";
 import { fileURLToPath } from "node:url";
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-core";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, "..", "dist", "public");
@@ -139,6 +139,41 @@ const MIME = {
   ".txt": "text/plain; charset=utf-8",
 };
 
+// Resolve a Chromium to drive. Locally we use a system Chrome (fast); on
+// Vercel/Lambda the build image lacks Chrome's system libraries, so we use
+// @sparticuz/chromium — a self-contained Chromium bundled with those libs.
+function findLocalChrome() {
+  const candidates = [
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "/Applications/Chromium.app/Contents/MacOS/Chromium",
+    "/usr/bin/google-chrome",
+    "/usr/bin/chromium-browser",
+    "/usr/bin/chromium",
+  ];
+  return candidates.find((c) => existsSync(c));
+}
+
+async function launchBrowser() {
+  const onServerless = !!(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME);
+  const localChrome = process.env.PUPPETEER_EXECUTABLE_PATH || (!onServerless && findLocalChrome());
+  if (localChrome) {
+    console.log(`[prerender] launching local Chrome: ${localChrome}`);
+    return puppeteer.launch({
+      headless: true,
+      executablePath: localChrome,
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    });
+  }
+  const chromium = (await import("@sparticuz/chromium")).default;
+  const executablePath = await chromium.executablePath();
+  console.log(`[prerender] launching @sparticuz/chromium: ${executablePath}`);
+  return puppeteer.launch({
+    args: chromium.args,
+    executablePath,
+    headless: chromium.headless,
+  });
+}
+
 // Minimal static server with SPA fallback to index.html.
 function startServer() {
   const server = createServer(async (req, res) => {
@@ -208,10 +243,7 @@ async function run() {
   }
 
   const server = await startServer();
-  const browser = await puppeteer.launch({
-    headless: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
-  });
+  const browser = await launchBrowser();
 
   try {
     for (const route of ROUTES) {
